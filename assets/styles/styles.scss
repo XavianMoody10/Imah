@@ -25,7 +25,7 @@ li {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 85%;
+    width: 90%;
     margin: 0 auto;
   }
 }
@@ -116,7 +116,7 @@ li {
       font-family: $inconsolata;
       font-weight: bold;
       color: black;
-      font-size: 1.1rem;
+      font-size: 1rem;
 
       &:hover {
         border-bottom: 3px solid black;
@@ -125,7 +125,7 @@ li {
 
     &-btn {
       margin-left: auto;
-      font-size: 1.1rem;
+      font-size: 1rem;
 
       &:hover {
         background-color: black;
@@ -156,5 +156,200 @@ li {
 
   .header-logo {
     width: 80px;
+  }
+}
+
+// --------------- HOME SECTION ---------------
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.home-text {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+
+  &__heading {
+    font-family: $raleWay;
+    font-size: 1.75rem;
+  }
+
+  &__headline {
+    font-family: $inconsolata;
+    font-size: 0.7rem;
+    font-weight: bold;
+    line-height: 15px;
+    width: 95%;
+  }
+
+  &__btn {
+    font-family: $inconsolata;
+    font-weight: bold;
+    color: white;
+    font-size: 0.7rem;
+    background-color: black;
+    border: 1px solid;
+    padding: 7px 15px;
+  }
+}
+
+@media (min-width: 640px) {
+  .home-text {
+    gap: 20px;
+    max-width: 576px;
+  }
+
+  .home-text__heading {
+    font-size: 2.5rem;
+  }
+
+  .home-text__headline {
+    font-size: 0.9rem;
+    line-height: 20px;
+  }
+
+  .home-text__btn {
+    font-size: 0.9rem;
+  }
+
+  .home-image {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 828px) {
+  .home-text {
+    max-width: none;
+    transform: translateX(-10px);
+    opacity: 0;
+    animation: enter-from-left 0.5s ease-in-out forwards;
+
+    &__heading {
+      font-size: 2rem;
+    }
+
+    &__headline {
+      width: auto;
+      font-size: 0.75rem;
+      line-height: 18px;
+    }
+  }
+
+  @keyframes enter-from-left {
+    from {
+      transform: translateX(-10px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .home {
+    flex-direction: row;
+    width: 95%;
+    margin: 50px 0 0 auto;
+  }
+
+  .home-image {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-image {
+    max-width: 550px;
+  }
+
+  .home-text {
+    gap: 30px;
+  }
+
+  .home-text__heading {
+    font-size: 2.3rem;
+  }
+
+  .home-text__headline {
+    font-size: 0.75rem;
+    width: 85%;
+  }
+
+  .home-text__btn {
+    font-size: 0.8rem;
+    padding: 10px 20px;
+
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .home {
+    width: 93%;
+  }
+
+  .home-image {
+    max-width: 640px;
+  }
+
+  .home-text__heading {
+    font-size: 2.55rem;
+  }
+
+  .home-text__headline {
+    font-size: 0.8rem;
+    width: 80%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .home-image {
+    max-width: 680px;
+  }
+
+  .home-text__heading {
+    font-size: 2.8rem;
+  }
+
+  .home-text__headline {
+    font-size: 0.9rem;
+    width: 80%;
+  }
+
+  .home-text__btn {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .home {
+    width: 95%;
+  }
+
+  .home-text {
+    width: 75%;
+
+    &__heading {
+      font-size: 3.5rem;
+    }
+
+    &__headline {
+      font-size: 1rem;
+      line-height: 20px;
+    }
+  }
+
+  .home-image {
+    max-width: 1200px;
   }
 }
