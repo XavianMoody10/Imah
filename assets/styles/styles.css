@@ -326,7 +326,7 @@ li {
     transform: translateX(-660px);
   }
 }
-.sponsors__slider-image {
+.sponsors-slider__image {
   height: 80px;
   width: 100px;
   border: 1px solid;
@@ -353,7 +353,7 @@ li {
   }
 }
 @media (min-width: 1126px) {
-  .sponsors__slider-image {
+  .sponsors-slider__image {
     width: 200px;
   }
   .sponsors-slider__track {
