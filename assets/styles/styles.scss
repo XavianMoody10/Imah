@@ -377,7 +377,7 @@ li {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 10px;
-  animation: infinite-scroll-1 5s infinite linear;
+  animation: infinite-scroll-1 10s infinite linear;
 }
 
 @keyframes infinite-scroll-1 {
@@ -406,7 +406,7 @@ li {
 
   .sponsors-slider__track {
     gap: 50px;
-    animation: infinite-scroll-2 5s infinite linear;
+    animation: infinite-scroll-2 10s infinite linear;
   }
 
   @keyframes infinite-scroll-2 {
@@ -449,5 +449,301 @@ li {
 @media (min-width: 1600px) {
   .sponsors-heading {
     font-size: 1.8rem;
+  }
+}
+
+// --------------- ABOUT US SECTION ---------------
+.about-us {
+  margin: 80px auto 0 auto;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.about-us-visuals {
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
+  height: 200px;
+  position: relative;
+
+  &__item {
+    width: 200px;
+
+    &:nth-of-type(2) {
+      height: 75%;
+    }
+  }
+}
+
+.about-us-visuals-stats {
+  position: absolute;
+  bottom: -25px;
+  right: 0;
+  height: 50px;
+  width: 250px;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-family: $raleWay;
+
+    &:not(.about-us-visuals-stats__item:nth-of-type(3)) {
+      border-right: 1px solid;
+    }
+  }
+
+  &__stat {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+
+  &__category {
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+}
+
+.about-us-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 90%;
+  margin: 0 auto;
+
+  &-section-name {
+    font-family: $raleWay;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__subheading {
+    font-family: $raleWay;
+    font-size: 1.4rem;
+  }
+
+  &__details {
+    font-family: $inconsolata;
+    font-size: 0.7rem;
+    font-weight: bold;
+    line-height: 15px;
+  }
+}
+
+@media (min-width: 375px) {
+  .about-us {
+    max-width: 375px;
+  }
+
+  .about-us-visuals {
+    height: 250px;
+  }
+
+  .about-us-visuals-stats {
+    bottom: -15px;
+    width: 270px;
+  }
+}
+
+@media (min-width: 500px) {
+  .about-us {
+    max-width: 490px;
+    margin-bottom: 20px;
+  }
+
+  .about-us-visuals {
+    height: 300px;
+
+    &__item {
+      width: 100%;
+
+      &:nth-of-type(2) {
+        height: 75%;
+      }
+    }
+  }
+
+  .about-us-visuals-stats {
+    bottom: -20px;
+    right: 15px;
+    width: 300px;
+    padding: 40px 0;
+
+    &__stat {
+      font-size: 1.5rem;
+    }
+
+    &__category {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media (min-width: 828px) {
+  .about-us {
+    width: 95%;
+    max-width: none;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-us-text {
+    gap: 25px;
+  }
+
+  .about-us-text-section-name {
+    font-size: 1rem;
+  }
+
+  .about-us-text__subheading {
+    width: 85%;
+    font-size: 2rem;
+  }
+
+  .about-us-text__details {
+    font-size: 0.75rem;
+    line-height: 18px;
+  }
+}
+
+@media (min-width: 1126px) {
+  .about-us-visuals {
+    height: 350px;
+  }
+
+  .about-us-visuals-stats {
+    bottom: -10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .about-us-visuals {
+    height: 350px;
+
+    &__item:nth-of-type(2) {
+      height: 79%;
+    }
+  }
+
+  .about-us-text__details {
+    font-size: 0.8rem;
+  }
+
+  .about-us-visuals-stats {
+    bottom: -25px;
+    width: 400px;
+  }
+
+  .about-us-visuals-stats__stat {
+    font-size: 2rem;
+  }
+
+  .about-us-visuals-stats__category {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .about-us-visuals {
+    height: 400px;
+  }
+
+  .about-us-visuals-stats {
+    padding: 50px 0;
+  }
+
+  .about-us-text__details {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 1414px) {
+  .about-us-visuals-stats {
+    bottom: -30px;
+    width: 450px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .about-us-visuals {
+    height: 450px;
+  }
+
+  .about-us-visuals-stats {
+    bottom: -25px;
+    width: 500px;
+  }
+
+  .about-us-text-section-name {
+    font-size: 1.2rem;
+  }
+
+  .about-us-text__subheading {
+    font-size: 2.8rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .about-us-visuals {
+    height: 500px;
+
+    &__item:nth-of-type(2) {
+      height: 80%;
+    }
+  }
+
+  .about-us-text__details {
+    font-size: 1rem;
+    line-height: 20px;
+  }
+
+  .about-us-visuals-stats {
+    bottom: -25px;
+    width: 550px;
+
+    &__stat {
+      font-size: 2.2rem;
+    }
+
+    &__category {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media (min-width: 1750px) {
+  .about-us {
+    width: 90%;
+  }
+
+  .about-us-visuals {
+    height: 550px;
+    padding: 0;
+
+    &__item:nth-of-type(2) {
+      height: 82%;
+    }
+  }
+
+  .about-us-visuals-stats {
+    bottom: -40px;
+    right: 0;
+    width: 600px;
+    padding: 60px 0;
   }
 }
