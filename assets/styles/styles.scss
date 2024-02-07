@@ -1,3 +1,7 @@
+// IMPORTS
+@use "partials/_fonts.scss";
+@use "partials/_section-name.scss";
+
 // VARIABLES
 $raleWay: "Raleway", sans-serif;
 $inconsolata: "Inconsolata", monospace;
@@ -182,9 +186,8 @@ li {
 
   &__headline {
     font-family: $inconsolata;
-    font-size: 0.7rem;
+    @include fonts.normal-text();
     font-weight: bold;
-    line-height: 15px;
     width: 95%;
   }
 
@@ -523,23 +526,18 @@ li {
 
   &-section-name {
     font-family: $raleWay;
-    font-size: 0.8rem;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    @include section-name.section-name();
   }
 
   &__subheading {
     font-family: $raleWay;
-    font-size: 1.4rem;
+    @include fonts.large-text();
   }
 
   &__details {
     font-family: $inconsolata;
-    font-size: 0.7rem;
+    @include fonts.normal-text();
     font-weight: bold;
-    line-height: 15px;
   }
 }
 
@@ -604,20 +602,10 @@ li {
 @media (min-width: 1024px) {
   .about-us-text {
     gap: 25px;
-  }
 
-  .about-us-text-section-name {
-    font-size: 1rem;
-  }
-
-  .about-us-text__subheading {
-    width: 85%;
-    font-size: 2rem;
-  }
-
-  .about-us-text__details {
-    font-size: 0.75rem;
-    line-height: 18px;
+    &__subheading {
+      width: 85%;
+    }
   }
 }
 
@@ -640,21 +628,17 @@ li {
     }
   }
 
-  .about-us-text__details {
-    font-size: 0.8rem;
-  }
-
   .about-us-visuals-stats {
     bottom: -25px;
     width: 400px;
-  }
 
-  .about-us-visuals-stats__stat {
-    font-size: 2rem;
-  }
+    &__stat {
+      font-size: 2rem;
+    }
 
-  .about-us-visuals-stats__category {
-    font-size: 1rem;
+    &__category {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -665,10 +649,6 @@ li {
 
   .about-us-visuals-stats {
     padding: 50px 0;
-  }
-
-  .about-us-text__details {
-    font-size: 0.9rem;
   }
 }
 
@@ -688,14 +668,6 @@ li {
     bottom: -25px;
     width: 500px;
   }
-
-  .about-us-text-section-name {
-    font-size: 1.2rem;
-  }
-
-  .about-us-text__subheading {
-    font-size: 2.8rem;
-  }
 }
 
 @media (min-width: 1600px) {
@@ -705,11 +677,6 @@ li {
     &__item:nth-of-type(2) {
       height: 80%;
     }
-  }
-
-  .about-us-text__details {
-    font-size: 1rem;
-    line-height: 20px;
   }
 
   .about-us-visuals-stats {

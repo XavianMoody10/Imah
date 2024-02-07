@@ -1,0 +1,30 @@
+@mixin large-text() {
+  font-size: 1.4rem;
+
+  @media (min-width: 1024px) {
+    font-size: 2rem;
+  }
+
+  @media (min-width: 1500px) {
+    font-size: 2.8rem;
+  }
+}
+
+@mixin normal-text() {
+  font-size: 0.7rem;
+  line-height: 15px;
+
+  @media (min-width: 1024px) {
+    font-size: 0.75rem;
+    line-height: 18px;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 0.8rem;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 1rem;
+    line-height: 25px;
+  }
+}
