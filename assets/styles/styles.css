@@ -805,5 +805,126 @@ li {
     height: 700px;
   }
 }
+.projects {
+  margin: 50px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.projects-text {
+  width: 90%;
+  max-width: 338px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.projects-text-section-name {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-start;
+}
+@media (min-width: 1024px) {
+  .projects-text-section-name {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1500px) {
+  .projects-text-section-name {
+    font-size: 1.2rem;
+  }
+}
+.projects-text__subheading {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.4rem;
+}
+@media (min-width: 1024px) {
+  .projects-text__subheading {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1500px) {
+  .projects-text__subheading {
+    font-size: 2.8rem;
+  }
+}
+
+.projects-showcase {
+  position: relative;
+  margin: 0 auto;
+}
+.projects-showcase__image {
+  min-height: 250px;
+  width: 100vw;
+  max-width: 450px;
+  object-fit: cover;
+}
+.projects-showcase__info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  max-width: 200px;
+  font-family: "Inconsolata", monospace;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.projects-showcase__name {
+  font-size: 0.8rem;
+}
+.projects-showcase__description {
+  font-size: 0.7rem;
+  font-weight: 300;
+}
+
+@media (min-width: 500px) {
+  .projects-text {
+    max-width: 450px;
+  }
+  .projects-showcase__image {
+    width: 90vw;
+  }
+}
+@media (min-width: 828px) {
+  .projects-text {
+    max-width: none;
+  }
+  .projects-showcase__image {
+    max-width: none;
+  }
+}
+@media (min-width: 1024px) {
+  .projects-showcase__info {
+    bottom: 35px;
+    left: 35px;
+    gap: 20px;
+  }
+  .projects-showcase__name {
+    font-size: 1.2rem;
+  }
+  .projects-showcase__description {
+    font-size: 0.9rem;
+  }
+}
+@media (min-width: 1280px) {
+  .projects-showcase__info {
+    max-width: 250px;
+  }
+  .projects-showcase__name {
+    font-size: 1.4rem;
+  }
+  .projects-showcase__description {
+    font-size: 1rem;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */
