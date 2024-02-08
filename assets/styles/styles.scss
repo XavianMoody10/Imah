@@ -465,13 +465,14 @@ li {
 }
 
 .about-us-visuals {
-  padding: 0 15px;
+  // padding: 0 15px;
   display: flex;
   justify-content: space-between;
   gap: 15px;
-  width: 100%;
+  width: 90%;
   height: 200px;
   position: relative;
+  margin: 0 auto;
 
   &__item {
     width: 200px;
@@ -485,7 +486,7 @@ li {
 .about-us-visuals-stats {
   position: absolute;
   bottom: -25px;
-  right: 0;
+  right: -15px;
   height: 50px;
   width: 250px;
   background-color: #f2f2f2;
@@ -551,6 +552,7 @@ li {
   }
 
   .about-us-visuals-stats {
+    right: 0;
     bottom: -15px;
     width: 270px;
   }
@@ -576,7 +578,7 @@ li {
 
   .about-us-visuals-stats {
     bottom: -20px;
-    right: 15px;
+    // right: 0;
     width: 300px;
     padding: 40px 0;
 
@@ -592,14 +594,27 @@ li {
 
 @media (min-width: 828px) {
   .about-us {
-    width: 95%;
+    width: 90%;
     max-width: none;
     flex-direction: row;
     align-items: center;
   }
+
+  .about-us-text {
+    // max-width: 300px;
+    width: 70%;
+  }
 }
 
 @media (min-width: 1024px) {
+  .about-us-visuals {
+    height: 350px;
+  }
+
+  .about-us-visuals-stats {
+    width: 350px;
+  }
+
   .about-us-text {
     gap: 25px;
 
@@ -699,11 +714,11 @@ li {
   }
 
   .about-us-visuals {
-    height: 550px;
+    height: 600px;
     padding: 0;
 
     &__item:nth-of-type(2) {
-      height: 82%;
+      height: 84%;
     }
   }
 
@@ -712,5 +727,143 @@ li {
     right: 0;
     width: 600px;
     padding: 60px 0;
+  }
+}
+
+// --------------- SERVICES SECTION ---------------
+.services {
+  width: 90%;
+  max-width: 288px;
+  margin: 30px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  gap: 40px;
+}
+
+.services-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 auto;
+  gap: 10px;
+
+  &-section-name {
+    font-family: $raleWay;
+    @include section-name.section-name($direction: row-reverse);
+  }
+
+  &__subheading {
+    font-family: $raleWay;
+    @include fonts.large-text();
+  }
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-items: center;
+  gap: 20px;
+  width: 100%;
+
+  &__item {
+    height: 370px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    // max-width: 288px;
+
+    &:nth-of-type(1) {
+      background-image: url("/assets/images/interior-design.jpg");
+    }
+    &:nth-of-type(2) {
+      background-image: url("/assets/images/architecture.jpg");
+    }
+    &:nth-of-type(3) {
+      background-image: url("/assets/images/furntiure-design.jpg");
+    }
+  }
+
+  &__text {
+    font-family: $raleWay;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+  }
+}
+
+@media (min-width: 375px) {
+  .services {
+    max-width: 338px;
+  }
+}
+
+@media (min-width: 500px) {
+  .services {
+    max-width: 450px;
+  }
+
+  .services-container {
+    grid-template-columns: repeat(3, 1fr);
+
+    &__item {
+      width: 100%;
+      height: 300px;
+    }
+  }
+}
+
+@media (min-width: 828px) {
+  .services {
+    max-width: none;
+  }
+
+  .services-text {
+    margin: 60px 0 0 0;
+  }
+
+  .services-container {
+    gap: 8px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .services {
+    justify-items: flex-start;
+  }
+
+  .services-container {
+    justify-content: auto;
+
+    &__item {
+      // width: 100%;
+      height: 400px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .services-container__item {
+    height: 500px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .services-container__item {
+    height: 650px;
+  }
+
+  .services-container__text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1750px) {
+  .services-container__item {
+    height: 700px;
   }
 }
