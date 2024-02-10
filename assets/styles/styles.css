@@ -1128,5 +1128,142 @@ li {
     line-height: 30px;
   }
 }
+.consultation {
+  padding: 20px;
+  margin-top: 50px;
+  background-image: url("/assets/images/consultation-bg.jpg");
+  background-size: 150%;
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+
+.consultation-text {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 280px;
+}
+.consultation-text__subheading {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.4rem;
+}
+@media (min-width: 1024px) {
+  .consultation-text__subheading {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1500px) {
+  .consultation-text__subheading {
+    font-size: 2.8rem;
+  }
+}
+.consultation-text__description {
+  font-family: "Inconsolata", monospace;
+  font-size: 0.7rem;
+  line-height: 15px;
+  line-height: 15px;
+  width: 90%;
+}
+@media (min-width: 1024px) {
+  .consultation-text__description {
+    font-size: 0.75rem;
+    line-height: 18px;
+  }
+}
+@media (min-width: 1200px) {
+  .consultation-text__description {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 1280px) {
+  .consultation-text__description {
+    font-size: 1rem;
+    line-height: 25px;
+  }
+}
+.consultation-text__btn {
+  font-family: "Inconsolata", monospace;
+  font-weight: bold;
+  color: white;
+  font-size: 0.7rem;
+  background-color: black;
+  border: 1px solid;
+  padding: 7px 15px;
+  width: fit-content;
+}
+
+@media (min-width: 408px) {
+  .consultation {
+    background-position: top;
+  }
+}
+@media (min-width: 500px) {
+  .consultation {
+    background-size: cover;
+    background-position: 0 -100px;
+  }
+}
+@media (min-width: 828px) {
+  .consultation-text {
+    width: 90%;
+    margin-left: 3%;
+  }
+}
+@media (min-width: 1024px) {
+  .consultation {
+    height: 260px;
+    padding: 50px 20px;
+  }
+  .consultation-text {
+    max-width: 400px;
+  }
+}
+@media (min-width: 1280px) {
+  .consultation {
+    background-position: 0 -200px;
+  }
+  .consultation-text {
+    max-width: 400px;
+  }
+}
+@media (min-width: 1414px) {
+  .consultation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .consultation::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.315);
+  }
+  .consultation * {
+    z-index: 2;
+  }
+  .consultation-text {
+    align-items: center;
+    max-width: none;
+    text-align: center;
+    margin: 0;
+  }
+  .consultation-text__subheading, .consultation-text__description {
+    color: white;
+  }
+}
+@media (min-width: 1500px) {
+  .consultation {
+    height: 350px;
+  }
+}
+@media (min-width: 1750px) {
+  .consultation {
+    height: 400px;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */
