@@ -1,0 +1,64 @@
+@use "../abstracts/variables";
+
+@mixin primary-btn--light() {
+  font-family: variables.$inconsolata;
+  font-weight: bold;
+  color: black;
+  font-size: 0.7rem;
+  border: 1px solid;
+  padding: 7px 15px;
+
+  @media (min-width: 640px) {
+    font-size: 0.9rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 0.8rem;
+    padding: 10px 20px;
+
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 1rem;
+  }
+
+  @media (min-width: 1500px) {
+    font-size: 1.11rem;
+  }
+}
+
+@mixin primary-btn--dark() {
+  font-family: variables.$inconsolata;
+  font-weight: bold;
+  color: white;
+  font-size: 0.7rem;
+  background-color: black;
+  border: 1px solid black;
+  padding: 7px 15px;
+
+  @media (min-width: 640px) {
+    font-size: 0.9rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 0.8rem;
+    padding: 10px 20px;
+
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 1rem;
+  }
+
+  @media (min-width: 1500px) {
+    font-size: 1.11rem;
+  }
+}

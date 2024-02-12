@@ -1,10 +1,8 @@
 // IMPORTS
-@use "partials/_fonts.scss";
-@use "partials/_section-name.scss";
-
-// VARIABLES
-$raleWay: "Raleway", sans-serif;
-$inconsolata: "Inconsolata", monospace;
+@use "partials/_section-name";
+@use "abstracts/_variables";
+@use "components/_button";
+@use "components/_text";
 
 // RESET
 * {
@@ -19,6 +17,23 @@ a {
 
 li {
   list-style: none;
+}
+
+// MODIFIERS
+.btn--dark {
+  @include button.primary-btn--dark();
+}
+
+.btn--light {
+  @include button.primary-btn--light();
+}
+
+.text--large {
+  @include text.text--large();
+}
+
+.text--small {
+  @include text.text--small();
 }
 
 // --------------- HEADER ---------------
@@ -55,17 +70,11 @@ li {
     gap: 70px;
   }
 
-  &__anchor,
-  &-btn {
-    font-family: $inconsolata;
+  &__anchor {
+    font-family: variables.$inconsolata;
     font-weight: bold;
     color: black;
     font-size: 1.3rem;
-  }
-
-  &-btn {
-    border: 2px solid;
-    padding: 8px 20px;
   }
 }
 
@@ -117,7 +126,7 @@ li {
     }
 
     &__anchor {
-      font-family: $inconsolata;
+      font-family: variables.$inconsolata;
       font-weight: bold;
       color: black;
       font-size: 1rem;
@@ -129,12 +138,6 @@ li {
 
     &-btn {
       margin-left: auto;
-      font-size: 1rem;
-
-      &:hover {
-        background-color: black;
-        color: white;
-      }
     }
   }
 }
@@ -151,10 +154,6 @@ li {
   }
 
   .header-navigation__anchor {
-    font-size: 1.2rem;
-  }
-
-  .header-navigation-btn {
     font-size: 1.2rem;
   }
 
@@ -180,25 +179,12 @@ li {
   gap: 15px;
 
   &__heading {
-    font-family: $raleWay;
+    font-family: variables.$raleway;
     font-size: 1.75rem;
   }
 
   &__headline {
-    font-family: $inconsolata;
-    @include fonts.normal-text();
-    font-weight: bold;
     width: 95%;
-  }
-
-  &__btn {
-    font-family: $inconsolata;
-    font-weight: bold;
-    color: white;
-    font-size: 0.7rem;
-    background-color: black;
-    border: 1px solid;
-    padding: 7px 15px;
   }
 }
 
@@ -217,10 +203,6 @@ li {
     line-height: 20px;
   }
 
-  .home-text__btn {
-    font-size: 0.9rem;
-  }
-
   .home-image {
     max-width: 640px;
   }
@@ -231,7 +213,7 @@ li {
     max-width: none;
     transform: translateX(-10px);
     opacity: 0;
-    animation: enter-from-left 0.5s ease-in-out forwards;
+    animation: enter-from-left 0.5s 0.5s ease-in-out forwards;
 
     &__heading {
       font-size: 2rem;
@@ -284,16 +266,6 @@ li {
     font-size: 0.75rem;
     width: 85%;
   }
-
-  .home-text__btn {
-    font-size: 0.8rem;
-    padding: 10px 20px;
-
-    &:hover {
-      background-color: white;
-      color: black;
-    }
-  }
 }
 
 @media (min-width: 1200px) {
@@ -327,10 +299,6 @@ li {
   .home-text__headline {
     font-size: 0.9rem;
     width: 80%;
-  }
-
-  .home-text__btn {
-    font-size: 1rem;
   }
 }
 
@@ -367,7 +335,7 @@ li {
 }
 
 .sponsors-heading {
-  font-family: $raleWay;
+  font-family: variables.$raleway;
   font-size: 1.2rem;
 }
 
@@ -465,7 +433,6 @@ li {
 }
 
 .about-us-visuals {
-  // padding: 0 15px;
   display: flex;
   justify-content: space-between;
   gap: 15px;
@@ -500,7 +467,7 @@ li {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    font-family: $raleWay;
+    font-family: variables.$raleway;
 
     &:not(.about-us-visuals-stats__item:nth-of-type(3)) {
       border-right: 1px solid;
@@ -526,19 +493,8 @@ li {
   margin: 0 auto;
 
   &-section-name {
-    font-family: $raleWay;
+    font-family: variables.$raleway;
     @include section-name.section-name();
-  }
-
-  &__subheading {
-    font-family: $raleWay;
-    @include fonts.large-text();
-  }
-
-  &__details {
-    font-family: $inconsolata;
-    @include fonts.normal-text();
-    font-weight: bold;
   }
 }
 
@@ -746,13 +702,8 @@ li {
   gap: 10px;
 
   &-section-name {
-    font-family: $raleWay;
+    font-family: variables.$raleway;
     @include section-name.section-name($direction: row-reverse);
-  }
-
-  &__subheading {
-    font-family: $raleWay;
-    @include fonts.large-text();
   }
 }
 
@@ -783,7 +734,7 @@ li {
   }
 
   &__text {
-    font-family: $raleWay;
+    font-family: variables.$raleway;
     color: white;
     font-weight: bold;
     position: absolute;
@@ -867,7 +818,6 @@ li {
 
 .projects {
   margin: 50px auto 0 auto;
-  // width: 90%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -884,13 +834,8 @@ li {
   gap: 10px;
 
   &-section-name {
-    font-family: $raleWay;
+    font-family: variables.$raleway;
     @include section-name.section-name($direction: row-reverse);
-  }
-
-  &__subheading {
-    font-family: $raleWay;
-    @include fonts.large-text();
   }
 }
 
@@ -911,7 +856,7 @@ li {
     left: 20px;
     color: white;
     max-width: 200px;
-    font-family: $inconsolata;
+    font-family: variables.$inconsolata;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -1008,7 +953,7 @@ li {
   &__vocation {
     display: flex;
     flex-direction: column;
-    font-family: $raleWay;
+    font-family: variables.$raleway;
   }
 
   &__name {
@@ -1023,7 +968,7 @@ li {
   &__testimony {
     font-size: 0.8rem;
     font-weight: 600;
-    font-family: $inconsolata;
+    font-family: variables.$inconsolata;
     line-height: 20px;
   }
 
@@ -1040,12 +985,8 @@ li {
   gap: 10px;
 
   &-section-name {
-    font-family: $raleWay;
+    font-family: variables.$raleway;
     @include section-name.section-name($direction: row-reverse);
-  }
-
-  &__subheading {
-    font-family: $raleWay;
   }
 }
 
@@ -1220,30 +1161,6 @@ li {
   flex-direction: column;
   gap: 15px;
   max-width: 280px;
-
-  &__subheading {
-    font-family: $raleWay;
-    @include fonts.large-text();
-  }
-
-  &__description {
-    font-family: $inconsolata;
-    @include fonts.normal-text();
-    // font-size: 0.8rem;
-    line-height: 15px;
-    width: 90%;
-  }
-
-  &__btn {
-    font-family: $inconsolata;
-    font-weight: bold;
-    color: white;
-    font-size: 0.7rem;
-    background-color: black;
-    border: 1px solid;
-    padding: 7px 15px;
-    width: fit-content;
-  }
 }
 
 @media (min-width: 408px) {
@@ -1331,5 +1248,93 @@ li {
 @media (min-width: 1750px) {
   .consultation {
     height: 400px;
+  }
+}
+
+// --------------- TESTIMONIAL SECTION ---------------
+.blog {
+  margin: 50px auto 0 auto;
+  width: 90%;
+  max-width: 450px;
+}
+
+.blog-text {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+
+  &-section-name {
+    font-family: variables.$raleway;
+    @include section-name.section-name($direction: row-reverse);
+  }
+}
+
+.blog-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.blog-card__header {
+  font-family: variables.$raleway;
+  font-size: 1.5rem;
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__caption {
+    font-family: variables.$raleway;
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+
+  &__summary {
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 828px) {
+  .blog {
+    max-width: none;
+  }
+
+  .blog-cards {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1126px) {
+  .blog-card__header {
+    font-size: 1.7rem;
+  }
+}
+
+@media (min-width: 1500px) {
+  .blog-card {
+    &__caption {
+      font-size: 1rem;
+    }
+
+    &__body {
+      margin-top: 20px;
+    }
+
+    &__summary {
+      font-size: 1rem;
+      line-height: 25px;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  .blog-card__header {
+    font-size: 1.8rem;
   }
 }

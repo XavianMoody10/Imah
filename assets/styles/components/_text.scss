@@ -1,5 +1,8 @@
-@mixin large-text() {
+@use "../abstracts/variables";
+
+@mixin text--large() {
   font-size: 1.4rem;
+  font-family: variables.$raleway;
 
   @media (min-width: 1024px) {
     font-size: 2rem;
@@ -10,9 +13,11 @@
   }
 }
 
-@mixin normal-text() {
-  font-size: 0.7rem;
-  line-height: 15px;
+@mixin text--small() {
+  font-size: 0.75rem;
+  line-height: 18px;
+  font-family: variables.$inconsolata;
+  font-weight: bold;
 
   @media (min-width: 1024px) {
     font-size: 0.75rem;
