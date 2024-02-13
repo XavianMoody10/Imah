@@ -3,6 +3,7 @@
 @use "components/_button";
 @use "components/_text";
 @use "components/_section-title";
+@use "components/_anchor";
 
 // RESET
 * {
@@ -34,6 +35,10 @@ li {
 
 .text--small {
   @include text.text--small();
+}
+
+.anchor--primary {
+  @include anchor.anchor--primary();
 }
 
 // --------------- HEADER ---------------
@@ -126,14 +131,7 @@ li {
     }
 
     &__anchor {
-      font-family: variables.$inconsolata;
-      font-weight: bold;
-      color: black;
       font-size: 1rem;
-
-      &:hover {
-        border-bottom: 3px solid black;
-      }
     }
 
     &-btn {
@@ -1384,6 +1382,7 @@ li {
 
   &__input {
     border: none;
+    outline: none;
     background-color: transparent;
     border-bottom: 1px solid black;
     font-family: variables.$inconsolata;
@@ -1413,10 +1412,7 @@ li {
   }
 
   &__anchor {
-    font-family: variables.$inconsolata;
     font-size: 0.9rem;
-    font-weight: bold;
-    color: black;
   }
 }
 

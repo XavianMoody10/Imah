@@ -1,0 +1,11 @@
+@use "../abstracts/variables";
+
+@mixin anchor--primary {
+  font-family: variables.$inconsolata;
+  font-weight: bold;
+  color: black;
+
+  &:hover {
+    border-bottom: 3px solid black;
+  }
+}

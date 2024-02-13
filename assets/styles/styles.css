@@ -120,6 +120,15 @@ li {
   }
 }
 
+.anchor--primary {
+  font-family: "Inconsolata", monospace;
+  font-weight: bold;
+  color: black;
+}
+.anchor--primary:hover {
+  border-bottom: 3px solid black;
+}
+
 .header {
   padding: 15px 0;
 }
@@ -201,13 +210,7 @@ li {
     margin-left: auto;
   }
   .header-navigation__anchor {
-    font-family: "Inconsolata", monospace;
-    font-weight: bold;
-    color: black;
     font-size: 1rem;
-  }
-  .header-navigation__anchor:hover {
-    border-bottom: 3px solid black;
   }
   .header-navigation-btn {
     margin-left: auto;
@@ -1336,6 +1339,7 @@ li {
 }
 .footer-updates-signup__input {
   border: none;
+  outline: none;
   background-color: transparent;
   border-bottom: 1px solid black;
   font-family: "Inconsolata", monospace;
@@ -1360,10 +1364,7 @@ li {
   font-weight: bold;
 }
 .footer-links__anchor {
-  font-family: "Inconsolata", monospace;
   font-size: 0.9rem;
-  font-weight: bold;
-  color: black;
 }
 
 @media (min-width: 500px) {
