@@ -1,8 +1,8 @@
 // IMPORTS
-@use "partials/_section-name";
 @use "abstracts/_variables";
 @use "components/_button";
 @use "components/_text";
+@use "components/_section-title";
 
 // RESET
 * {
@@ -494,7 +494,7 @@ li {
 
   &-section-name {
     font-family: variables.$raleway;
-    @include section-name.section-name();
+    @include section-title.section-title();
   }
 }
 
@@ -703,7 +703,7 @@ li {
 
   &-section-name {
     font-family: variables.$raleway;
-    @include section-name.section-name($direction: row-reverse);
+    @include section-title.section-title($direction: row-reverse);
   }
 }
 
@@ -835,7 +835,7 @@ li {
 
   &-section-name {
     font-family: variables.$raleway;
-    @include section-name.section-name($direction: row-reverse);
+    @include section-title.section-title($direction: row-reverse);
   }
 }
 
@@ -986,7 +986,7 @@ li {
 
   &-section-name {
     font-family: variables.$raleway;
-    @include section-name.section-name($direction: row-reverse);
+    @include section-title.section-title($direction: row-reverse);
   }
 }
 
@@ -1076,10 +1076,10 @@ li {
       font-size: 0.7rem;
       line-height: 17px;
     }
+  }
 
-    .testimonial-arrows {
-      display: none;
-    }
+  .testimonial-arrows {
+    display: none;
   }
 }
 
@@ -1266,7 +1266,7 @@ li {
 
   &-section-name {
     font-family: variables.$raleway;
-    @include section-name.section-name($direction: row-reverse);
+    @include section-title.section-title($direction: row-reverse);
   }
 }
 
@@ -1336,5 +1336,176 @@ li {
 @media (min-width: 1600px) {
   .blog-card__header {
     font-size: 1.8rem;
+  }
+}
+
+// --------------- FOOTER SECTION ---------------
+
+.footer {
+  background-color: #f2f2f2;
+  padding: 40px 0;
+  margin-top: 50px;
+
+  &__inner {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+  }
+}
+
+.footer-details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  &__text {
+    font-family: variables.$inconsolata;
+    font-size: 0.8rem;
+  }
+}
+
+.footer-updates-signup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__heading {
+    font-size: 0.9rem;
+    font-family: variables.$raleway;
+    font-weight: bold;
+  }
+
+  &__form {
+    display: flex;
+  }
+
+  &__input {
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid black;
+    font-family: variables.$inconsolata;
+    width: 65%;
+  }
+
+  &__btn {
+    border: none;
+    padding: 10px 25px;
+    background-color: black;
+    color: white;
+    font-size: 0.6rem;
+  }
+}
+
+.footer-links {
+  &__list {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__heading {
+    font-family: variables.$raleway;
+    font-weight: bold;
+  }
+
+  &__anchor {
+    font-family: variables.$inconsolata;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: black;
+  }
+}
+
+@media (min-width: 500px) {
+  .footer__inner {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 60px 40px;
+  }
+
+  .footer-updates-signup {
+    align-self: center;
+    justify-self: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer__inner {
+    max-width: 690px;
+  }
+}
+
+@media (min-width: 828px) {
+  .footer {
+    padding: 30px 0;
+
+    &__inner {
+      grid-template-columns: repeat(4, 1fr);
+      max-width: none;
+    }
+  }
+
+  .footer-updates-signup {
+    align-self: auto;
+    order: 4;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-details__logo {
+    width: 120px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer {
+    padding: 80px 0;
+
+    &__inner {
+      gap: 0;
+    }
+  }
+
+  .footer-details__logo {
+    width: 130px;
+  }
+
+  .footer-details__text {
+    font-size: 1rem;
+  }
+
+  .footer-links__list {
+    gap: 11px;
+    margin-top: 20px;
+  }
+
+  .footer-links__heading {
+    font-size: 1.2rem;
+  }
+
+  .footer-links__anchor {
+    font-size: 1.1rem;
+  }
+
+  .footer-updates-signup {
+    gap: 15px;
+  }
+
+  .footer-updates-signup__heading {
+    font-size: 1rem;
+  }
+
+  .footer-updates-signup__input {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 1500px) {
+  .footer {
+    margin-top: 100px;
   }
 }

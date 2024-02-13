@@ -1,4 +1,7 @@
-@mixin section-name($direction: row) {
+@use "../abstracts/variables";
+
+@mixin section-title($direction: row) {
+  font-family: variables.$raleway;
   font-size: 0.8rem;
   font-weight: bold;
   display: flex;
