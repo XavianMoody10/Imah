@@ -129,16 +129,28 @@ li {
   border-bottom: 3px solid black;
 }
 
-.background-image--zoom-effect-hover {
-  background-size: 100%;
+.showcase-arrows {
+  background-color: #f2f2f2;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+.showcase-arrows__arrows {
+  padding: 8px 12px;
+}
+.showcase-arrows__arrows:active {
+  background-color: black;
+  color: white;
+}
+
 .background-image--zoom-effect-hover:hover {
   animation: image-zoom-effect 7s ease-out alternate infinite;
 }
 
 .background-image--zoom-effect-auto {
   background-size: 100%;
-  animation: image-zoom-effect 10s ease-in-out alternate infinite;
+  animation: image-zoom-effect 7s ease-out alternate infinite;
 }
 
 @keyframes image-zoom-effect {
@@ -963,6 +975,7 @@ li {
   flex-direction: column;
   align-items: flex-start;
   gap: 30px;
+  position: relative;
 }
 
 .projects-text {
@@ -999,12 +1012,22 @@ li {
 .projects-showcase {
   position: relative;
   margin: 0 auto;
+  height: 300px;
+  width: 100vw;
   background-image: url("/assets/images/project-1.jpg");
   background-position: center;
   background-size: cover;
-  height: 250px;
-  width: 90%;
-  max-width: 450px;
+  background-repeat: no-repeat;
+}
+.projects-showcase__projects-arrows {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(242, 242, 242, 0.4392156863);
+  z-index: 1;
+}
+.projects-showcase__projects-arrows__arrows {
+  color: white;
 }
 .projects-showcase__info {
   position: absolute;
@@ -1029,22 +1052,32 @@ li {
   .projects-text {
     max-width: 450px;
   }
-  .projects-showcase__image {
+  .projects-showcase {
     width: 90vw;
+  }
+}
+@media (min-width: 768px) {
+  .projects-showcase {
+    height: 400px;
   }
 }
 @media (min-width: 828px) {
   .projects-text {
     max-width: none;
   }
-  .projects-showcase {
-    height: 400px;
-    max-width: none;
-  }
 }
 @media (min-width: 1024px) {
   .projects-showcase {
     height: 450px;
+    animation: projects-showcase-zoom-effect 7s ease-in-out alternate infinite;
+  }
+  @keyframes projects-showcase-zoom-effect {
+    0% {
+      background-size: 120%;
+    }
+    100% {
+      background-size: 130%;
+    }
   }
   .projects-showcase__info {
     bottom: 35px;
@@ -1060,7 +1093,7 @@ li {
 }
 @media (min-width: 1280px) {
   .projects-showcase {
-    height: 500px;
+    height: 600px;
   }
   .projects-showcase__info {
     max-width: 250px;
@@ -1072,19 +1105,14 @@ li {
     font-size: 1rem;
   }
 }
-@media (min-width: 1400px) {
-  .projects-showcase {
-    height: 550px;
-  }
-}
-@media (min-width: 1500px) {
-  .projects-showcase {
-    height: 650px;
-  }
-}
-@media (min-width: 1700px) {
+@media (min-width: 1750px) {
   .projects-showcase {
     height: 680px;
+  }
+}
+@media (min-width: 1870px) {
+  .projects-showcase {
+    height: 730px;
   }
 }
 .testimonial {
@@ -1164,14 +1192,6 @@ li {
 
 .testimonial-arrows {
   margin: 0 auto;
-  background-color: #f2f2f2;
-  font-size: 0.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 13px;
-  height: 40px;
-  width: 50px;
 }
 
 @media (min-width: 375px) {
