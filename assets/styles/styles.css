@@ -287,6 +287,15 @@ li {
     box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.193);
   }
 }
+@media (min-width: 640px) and (max-width: 768px) and (orientation: landscape) {
+  .header-navigation {
+    width: 100%;
+    box-shadow: none;
+  }
+  .header-navigation__list {
+    flex-direction: row;
+  }
+}
 @media (min-width: 828px) {
   .header-navigation {
     width: 30%;
@@ -426,6 +435,9 @@ li {
   .home-text__headline {
     font-size: 0.75rem;
     width: 85%;
+  }
+  .header-navigation {
+    transform: translateX(0);
   }
 }
 @media (min-width: 1200px) {
