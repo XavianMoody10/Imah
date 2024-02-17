@@ -1,5 +1,6 @@
 "use strict";
 
+// TOGGLE THE MOBILE NAVIGATION
 function toggleMobileNavigation() {
   const navigation = document.querySelector(".header-navigation");
   const mobileIcon = document.querySelector(".header-burger-icon");
@@ -50,9 +51,10 @@ function toggleMobileNavigation() {
   mobileIcon.addEventListener("click", toggleAction);
 }
 
+// TOGGLE THE TESTIMONIAL SLIDER
 function testimonialSlider() {
-  const prevArrow = document.querySelector(".testimonial-arrows__left");
-  const nextArrow = document.querySelector(".testimonial-arrows__right");
+  const prevArrow = document.querySelector(".testimonial-arrow__left");
+  const nextArrow = document.querySelector(".testimonial-arrow__right");
   const cardName = document.querySelector(
     ".testimonial-card__name:nth-of-type(1)"
   );
@@ -65,6 +67,7 @@ function testimonialSlider() {
 
   let slideTracker = 0;
 
+  // All testimonies data
   const testimonies = [
     {
       image: "/assets/images/user-1.jpg",
@@ -86,9 +89,8 @@ function testimonialSlider() {
     },
   ];
 
+  // TESTIMONY PREVIOUS SLIDE ACTION
   function prevSlide(e) {
-    e.preventDefault();
-
     if (slideTracker !== 0) {
       slideTracker = slideTracker - 1;
       cardImage.src = testimonies[slideTracker].image;
@@ -97,10 +99,9 @@ function testimonialSlider() {
     }
   }
 
+  // TESTIMONY NEXT SLIDE ACTION
   function nextSlide(e) {
-    e.preventDefault();
-
-    if (slideTracker !== testimonies.length) {
+    if (slideTracker !== testimonies.length - 1) {
       slideTracker = slideTracker + 1;
       cardImage.src = testimonies[slideTracker].image;
       cardName.textContent = testimonies[slideTracker].name;
@@ -108,6 +109,7 @@ function testimonialSlider() {
     }
   }
 
+  // RESET TESTIMONY BACK TO DEFAULT
   function resetToDefaultHandler() {
     const currentWidth = window.innerWidth;
 
@@ -118,10 +120,40 @@ function testimonialSlider() {
     }
   }
 
-  prevArrow.addEventListener("click", prevSlide);
-  nextArrow.addEventListener("click", nextSlide);
-  prevArrow.addEventListener("touchstart", prevSlide);
-  nextArrow.addEventListener("touchstart", nextSlide);
+  prevArrow.addEventListener("click", (e) => {
+    if (e.buttons === 0) {
+      prevArrow.classList.add("arrow--active");
+      prevSlide();
+    }
+  });
+
+  prevArrow.addEventListener("touchstart", (e) => {
+    e.preventDefault();
+    prevArrow.classList.add("arrow--active");
+    prevSlide();
+  });
+
+  prevArrow.addEventListener("touchend", (e) => {
+    prevArrow.classList.remove("arrow--active");
+  });
+
+  nextArrow.addEventListener("click", (e) => {
+    if (e.buttons === 0) {
+      nextArrow.classList.add("arrow--active");
+      nextSlide();
+    }
+  });
+
+  nextArrow.addEventListener("touchstart", (e) => {
+    e.preventDefault();
+    nextArrow.classList.add("arrow--active");
+    nextSlide();
+  });
+
+  nextArrow.addEventListener("touchend", (e) => {
+    nextArrow.classList.remove("arrow--active");
+  });
+
   window.addEventListener("resize", resetToDefaultHandler);
 }
 

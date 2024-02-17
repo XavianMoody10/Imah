@@ -46,9 +46,12 @@ li {
   @include showcase-arrows.showcase-arrows();
 }
 
-.background-image--zoom-effect-hover {
-  // background-size: 100%;
+.arrow--active {
+  background-color: black;
+  color: white;
+}
 
+.background-image--zoom-effect-hover {
   &:hover {
     animation: image-zoom-effect 7s ease-out alternate infinite;
   }

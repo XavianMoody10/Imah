@@ -139,7 +139,8 @@ li {
 .showcase-arrows__arrows {
   padding: 8px 12px;
 }
-.showcase-arrows__arrows:active {
+
+.arrow--active {
   background-color: black;
   color: white;
 }
